@@ -160,13 +160,21 @@ body {
 
 .movie-list-item {
     margin-right: 30px;
+    position: relative;
 }
 
 .movie-list-item:hover .movie-list-item-img {
     transform: scale(1.2);
     margin: 0 30px;
-
+    opacity: 0.5;
 }
+
+.movie-list-item:hover .movie-list-item-title,
+.movie-list-item:hover .movie-list-item-desc,
+.movie-list-item:hover .movie-list-itmem-button {
+    opacity: 1;
+}
+
 
 .movie-list-item-img {
     width: 270px;
@@ -176,4 +184,43 @@ body {
 
 }
 
-.
+.movie-list-item-title {
+    background-color: #333;
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-item-desc {
+    background-color: #333;
+    padding: 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    opacity: 0;
+    width: 200px;
+    transition: 1s all ease-in-out;
+
+}
+
+.movie-list-itmem-button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+
+}
