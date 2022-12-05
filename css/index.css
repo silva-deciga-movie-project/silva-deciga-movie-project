@@ -125,6 +125,7 @@ body {
 .featured-content {
     height: 50vh;
     padding: 50px;
+    background-color: red;
 }
 
 .featured-title {
@@ -150,7 +151,29 @@ body {
     padding: 20px;
 }
 
+.movie-list {
+    display: flex;
+    align-items: center;
+    height: 300px;
+
+}
+
+.movie-list-item {
+    margin-right: 30px;
+}
+
+.movie-list-item:hover .movie-list-item-img {
+    transform: scale(1.2);
+    margin: 0 30px;
+
+}
+
 .movie-list-item-img {
     width: 270px;
     height: 200px;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
+
 }
+
+.
