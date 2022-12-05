@@ -6,11 +6,7 @@
 // });
 
 
-// Posting Request to Glitch //
-
-// Adding Functionality //
-
-
+// Adding Movies to DataBase //
  $("#addButton").on("click", function(e) {
         e.preventDefault();
         const submitObj = {
@@ -35,11 +31,6 @@
             console.log(error);
         })
     })
-
-let html =""
-
-html += <div
-
 
 
 
