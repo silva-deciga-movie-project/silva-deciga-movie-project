@@ -238,3 +238,7 @@ body {
     color: green;
     opacity: .5;
 }
+
+#search {
+    color: white;
+}
