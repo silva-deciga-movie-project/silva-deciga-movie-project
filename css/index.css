@@ -134,7 +134,6 @@ body {
 
 .featured-desc {
     width: 500px;
-    color: yellow;
     margin: 30px, 0
 }
 .featured-button {
@@ -149,6 +148,10 @@ body {
 
 .movie-list-container {
     padding: 20px;
+}
+
+.movie-list-wrapper {
+    position relative;
 }
 
 .movie-list {
@@ -211,7 +214,7 @@ body {
 
 .movie-list-itmem-button {
     padding: 10px;
-    background-color: green;
+    background-color: lime;
     color: white;
     border-radius: 10px;
     outline: none;
@@ -223,4 +226,10 @@ body {
     opacity: 0;
     transition: 1s all ease-in-out;
 
+}
+
+.arrow {
+    font-size: 120px;
+    color: green;
+    opacity: .5;
 }
