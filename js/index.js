@@ -4,7 +4,19 @@
 // }).then((movieData) => {
 //     console.log(movieData);
 // });
+http://www.omdbapi.com/?apikey=[yourkey]&
+$("#search-button").click((e) => {
+    e.preventDefault();
+    let userInput = $("#searchBox").val()
+    console.log(userInput)
+    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=d431370d&t=${userInput}
+`).then((data) => {
+        return data.json();
+    }).then((data) => {
+        console.log(data);
+    })
 
+})
 
 // Adding Movies to DataBase //
  $("#addButton").on("click", function(e) {
@@ -26,16 +38,35 @@
         fetch(url, options).then(() => fetch('https://highfalutin-defiant-hickory.glitch.me/movies')).then((data) => {
             return data.json();
         }).then((objectData) => {
-            console.log(objectData);
+            console.log(objectData).then();
         }).catch((error) => {
             console.log(error);
         })
     })
 
 
-// Deleting Movies from DataBase //
 
+//Delete Functionality //
 
+    $(".deleteButton").click(function(e) {
+        console.log($("#movieDelete").val());
+        e.preventDefault();
+        const url = '//highfalutin-defiant-hickory.glitch.me/movies/' + $("#movieDelete").val();
+
+        const options = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        };
+        fetch(url, options).then(() => fetch('https://highfalutin-defiant-hickory.glitch.me/movies')).then((data) => {
+            return data.json();
+        }).then((objectData) => {
+            console.log(objectData);
+        }).catch((error) => {
+            console.log(error);
+        });
+    });
 
 
 

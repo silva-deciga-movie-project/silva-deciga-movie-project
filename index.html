@@ -24,6 +24,10 @@
                 <li class="menu-list-item">Movies</li>
                 <li class="menu-list-item">Series</li>
                 <li class="menu-list-item">Trends</li>
+                <li class="menu-list-item"><labe>Search For A Movie</labe></li>
+                <li class="menu-list-item"><input type="search" id="searchBox"></li>
+                <li class="menu-list-item"><button type="button" id="search-button">Search</button></li>
+
             </ul>
         </div>
         </div>
@@ -46,9 +50,16 @@
             <label for="addRating">Add Rating</label>
             <input id="addRating" value="addRating">
             <button type="submit" id="addButton">Submit</button>
-
+        </div>
+<!--Deleting Movies-->
+        <div class="delete">
+            <label for="movieDelete">Find Movie</label>
+            <input type='text' id="movieDelete">
+            <button type="submit" class="deleteButton">Delete</button>
         </div>
     </div>
+
+
 
 
 
@@ -99,11 +110,17 @@
 
     </div>
 </div>
+
+
+
+
 <!--JQUERY-->
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
 
 <!--JS LINK-->
 <script src="js/index.js"></script>
+
+
 </body>
 </html>
