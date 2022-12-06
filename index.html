@@ -11,122 +11,99 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
+
 <!--NAVBAR-->
 <div class="navbar">
     <!--NAVBAR CONTAINER-->
     <div class="navbar-container">
         <div class="logo-container"> <h1 class="logo">Hulu</h1></div>
         <div class="menu-container">
-            <!--Creating an un-ordered list for the hyperlinks-->
+            <!--Creating a un-ordered list-->
             <ul class="menu-list">
                 <li class="menu-list-item active">Home</li>
                 <li class="menu-list-item">Movies</li>
                 <li class="menu-list-item">Series</li>
                 <li class="menu-list-item">Trends</li>
-                <li class="menu-list-item"></li>
             </ul>
         </div>
-
-
-        <!--Profile account on top right corner-->
-        <div class="profile-container">
-            <img class="profile-picture" src="" alt=""/>
-            <div class="profile-text-container">'<span class="profile-text">Profile</span>
-                <i class="fa-regular fa-arrow-down"></i>
-            </div>
-            <!--Toggle-->
-            <div class="toggle">
-                <i class="fa-regular fa-moon toggle-icon"></i>
-                <i class="fa-solid fa-sun toggle-icon"></i>
-                <div class="toggle-ball"></div>
-            </div>
         </div>
+
+
     </div>
 </div>
 
-<!--SIDEBAR-->
 
-<div class="sidebar">
-    <i class="left-menu-icon fa-solid fa-magnifying-glass"></i>
-    <i class="left-menu-icon fa-solid fa-house"></i>
-    <i class="left-menu-icon fa-solid fa-user"></i>
-    <i class="left-menu-icon fa-solid fa-bookmark"></i>
-    <i class="left-menu-icon fa-solid fa-tv"></i>
-    <i class="left-menu-icon fa-solid fa-hourglass-start"></i>
-    <i class="left-menu-icon fa-solid fa-cart-shopping"></i>
-</div>
-
-
-<!-- The featured Movie in the mid top center of the screen will appear with either a movie title or trailer. --->
+<!-- Div for Adding or Deleting Movies --->
 <div class="container">
     <div class="content-container">
-        <div class="featured-content" style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url()">
-            <img class="featured-title" src="">
-            <p class="featured-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi assumenda beatae commodi corporis delectus dicta, dolor ea expedita incidunt iste labore quasi quod quos repudiandae sed, sunt, totam vero?</p>
-            <button class="featured-button">WATCH<button
+        <div class="featured-content">
+            <label for="addTitle">Add Title</label>
+            <input id="addTitle" value="title">
+            <label for="addDirector">Add Director</label>
+            <input id="addDirector" value="addDirector">
+            <label for="addGenre">Add Genre</label>
+            <input id="addGenre" value="addGenre">
+            <label for="addRating">Add Rating</label>
+            <input id="addRating" value="addRating">
+            <button type="submit" id="addButton">Submit</button>
+
         </div>
-
-        <!--Created search/button to test functionality-->
-            <label for="addTitle">Title</label>
-            <input id="addTitle" type="text">
-            <br>
-            <label for="addDirector">Director</label>
-            <input id="addDirector" type="text">
-            <br>
-            <label for="addRating">Rating</label>
-            <input id="addRating" type="text">
-            <br>
-            <label for="addGenre">Genre</label>
-            <input id="addGenre" type="text">
-            <br>
-        <button type='button' id="addButton">Save</button>
-
     </div>
 
-<!--Slidebar for movies-->
+
+
+
+
+
     <div class="movie-list-container">
         <h1 class="movie-list-title">NEW RELEASES</h1>
         <div class="movie-list-wrapper">
             <div class="movie-list">
                 <div class="movie-list-item">
                     <img class="movie-list-item-img" src="" alt=""/>
-                    <span class="movie-list-item-title">Her</span>
-                    <p class="movie-list-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias mollitia</p>
-                    <button class="movie-list-itmem-button">Watch</button>
+                    <!--                    <span class="movie-list-item-title">Her</span>-->
+                    <!--                    <p class="movie-list-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias mollitia</p>-->
+                    <!--                    <button class="movie-list-itmem-button"></button>-->
+                    <!--                </div>-->
                 </div>
-                <div class="movie-list">
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="" alt=""/>
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias mollitia</p>
-                        <button class="movie-list-itmem-button">Watch</button>
-                    </div>
-                    <div class="movie-list">
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="" alt=""/>
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias mollitia</p>
-                            <button class="movie-list-itmem-button">Watch</button>
-                        </div> <div class="movie-list">
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="" alt=""/>
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias mollitia</p>
-                            <button class="movie-list-itmem-button">Watch</button>
-                        </div>
-                    </div>
-                        <i class="fa-solid fa-arrow-right arrow"></i>
-                    </div>
+
+                <div class="movie-list-item">
+                    <img class="movie-list-item-img" src="" alt=""/>
+                    <!--                    <span class="movie-list-item-title">Her</span>-->
+                    <!--                    <p class="movie-list-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias mollitia</p>-->
+                    <!--                    <button class="movie-list-itmem-button"></button>-->
+                    <!--                </div>-->
+                </div>
+
+                <div class="movie-list-item">
+                    <img class="movie-list-item-img" src="" alt=""/>
+                    <!--                    <span class="movie-list-item-title">Her</span>-->
+                    <!--                    <p class="movie-list-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias mollitia</p>-->
+                    <!--                    <button class="movie-list-itmem-button"></button>-->
+                    <!--                </div>-->
+                </div>
+
+                <div class="movie-list-item">
+                    <img class="movie-list-item-img" src="" alt=""/>
+                    <!--                    <span class="movie-list-item-title">Her</span>-->
+                    <!--                    <p class="movie-list-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias mollitia</p>-->
+                    <!--                    <button class="movie-list-itmem-button"></button>-->
+                    <!--                </div>-->
                 </div>
             </div>
         </div>
-</div>
 
-<!--JQUERY CDN-->
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+
+
+
+    </div>
+</div>
+<!--JQUERY-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
 
 <!--JS LINK-->
 <script src="js/index.js"></script>
-<script src="js/keys.js"></script>
 </body>
 </html>
