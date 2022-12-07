@@ -4,15 +4,18 @@ let html =""
 fetch('https://highfalutin-defiant-hickory.glitch.me/movies').then((data) => {
     return data.json();
 }).then((data) => {
+
     for(let movie of data) {
+
 
         $(".movie-list-container").append(
             `<div class="movie-list-wrapper">
     <div class="movie-list">
         <div class="movie-list-item">
-            <img class="movie-list-item-img" src="${data.Poster}" alt=""/>
-            <span class="movie-list-item-title">${data.Title}</span>
-            <p class="movie-list-item-desc">${data.Plot}</p>
+            <img class="movie-list-item-img" src="${movie.Poster}" alt=""/>
+            <span class="movie-list-item-title">${movie.title}</span>
+            <p class="movie-list-item-desc">${movie.genre}</p>
+            <p class="movie-list-item-desc">${movie.id}</p>
             <button class="movie-list-itmem-button"></button>
             </div>
         </div>
