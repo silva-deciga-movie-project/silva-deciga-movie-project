@@ -1,15 +1,15 @@
 // Fetch to glitch, the data coming back is SUPPOSED to populate cards. But guess what bro, it doesn't. HELP. //
+setTimeout(() => {
+    let html =""
+    fetch('https://highfalutin-defiant-hickory.glitch.me/movies').then((data) => {
+        return data.json();
+    }).then((data) => {
 
-let html =""
-fetch('https://highfalutin-defiant-hickory.glitch.me/movies').then((data) => {
-    return data.json();
-}).then((data) => {
-
-    for(let movie of data) {
+        for(let movie of data) {
 
 
-        $(".movie-list-container").append(
-            `<div class="movie-list-wrapper">
+            $(".movie-list-container").append(
+                `<div class="movie-list-wrapper">
     <div class="movie-list">
         <div class="movie-list-item">
             <img class="movie-list-item-img" src="${movie.Poster}" alt=""/>
@@ -21,10 +21,36 @@ fetch('https://highfalutin-defiant-hickory.glitch.me/movies').then((data) => {
         </div>
     </div>
 </div>`
-        )}
-    console.log(data);
+            )}
+        console.log(data);
 
-});
+    });
+}, 3000)
+// let html =""
+// fetch('https://highfalutin-defiant-hickory.glitch.me/movies').then((data) => {
+//     return data.json();
+// }).then((data) => {
+//
+//     for(let movie of data) {
+//
+//
+//         $(".movie-list-container").append(
+//             `<div class="movie-list-wrapper">
+//     <div class="movie-list">
+//         <div class="movie-list-item">
+//             <img class="movie-list-item-img" src="${movie.Poster}" alt=""/>
+//             <span class="movie-list-item-title">${movie.title}</span>
+//             <p class="movie-list-item-desc">${movie.genre}</p>
+//             <p class="movie-list-item-desc">${movie.id}</p>
+//             <button class="movie-list-itmem-button"></button>
+//             </div>
+//         </div>
+//     </div>
+// </div>`
+//         )}
+//     console.log(data);
+//
+// });
 
 // Search button is clicked, then data is extracted from the searchbox, sends the data through fetch to the API. Once the API receieves the data it returns in an object and THEN "CreateCard" function is called to populate the cards. //
    $("#search-button").click((e) => {
