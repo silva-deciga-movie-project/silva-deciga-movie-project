@@ -1,0 +1,13 @@
+.image {
+    height: 45vh;
+    width: 18vw;
+    margin-top: 10px;
+}
+.movieInfo {
+    text-align: center;
+    align-content: center;
+}
+.card {
+    background-color: darkgray;
+    margin-bottom: 10px;
+}
