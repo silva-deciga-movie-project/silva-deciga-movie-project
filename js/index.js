@@ -4,7 +4,7 @@ setTimeout(() => {
     fetch('https://highfalutin-defiant-hickory.glitch.me/movies').then((data) => {
         return data.json();
     }).then((data) => {
-
+        $(".loading").css("display", 'none');
         for(let movie of data) {
 
 
