@@ -8,10 +8,8 @@ setTimeout(() => {
         for(let movie of data) {
 
 
-            $(".movie-list-container").append(
-                `<div class="movie-list-wrapper">
-    <div class="movie-list">
-        <div class="movie-list-item">
+            $(".movie-list").append(
+        `<div class="movie-list-item">
             <img class="movie-list-item-img" src="${movie.Poster}" alt=""/>
             <span class="movie-list-item-title">${movie.title}</span>
             <p class="movie-list-item-desc">${movie.genre}</p>
