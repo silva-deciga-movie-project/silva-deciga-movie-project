@@ -125,7 +125,7 @@ body {
 .featured-content {
     height: 50vh;
     padding: 50px;
-    background-color: red;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #151515);
 }
 
 .featured-title {
@@ -176,4 +176,35 @@ body {
 
 }
 
-.
+loading {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+}
+
+#loading {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+}
+
+#loading-image {
+    position: absolute;
+    top: 100px;
+    left: 240px;
+    z-index: 100;
+}

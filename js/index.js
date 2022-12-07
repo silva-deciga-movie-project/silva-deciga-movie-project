@@ -1,56 +1,117 @@
-console.log("Linked")
+// Fetch to glitch, the data coming back is SUPPOSED to populate cards. But guess what bro, it doesn't. HELP. //
 
-// This is what what we want posted //
-const reviewObj = {
-    restaurant_id: 1,
-    name: 'Codey',
-    rating: 5,
-    comments: "This is a really good place for coding and eating"
-};
+let html =""
+fetch('https://highfalutin-defiant-hickory.glitch.me/movies').then((data) => {
+    return data.json();
+}).then((data) => {
 
-// URL is who were sending it to//
-const url = 'https://codeup-restful-example.glitch.me/movies';
-
-// Type of Request //
-const options = {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    // Body is refering to the body of the reviewObj //
-    body: JSON.stringify(reviewObj),
-};
-
-// Using fetch data is used in the parameters //
-fetch(url, options)
-    .then( response => console.log(response) ) /* review was created successfully */
-    .catch( error => console.error(error) ); /* handle errors */
-
-// GET REQUEST //
-fetch(url)
-    .then( response => console.log(response) ) /* review was created successfully */
-    .catch( error => console.error(error) ); /* handle errors */
-
-// GET REQUEST //
-fetch(url, options)
-    .then( response => console.log(response) ) /* review was created successfully */
-    .catch( error => console.error(error) ); /* handle errors */
+    for(let movie of data) {
 
 
-// What to do //
+        $(".movie-list-container").append(
+            `<div class="movie-list-wrapper">
+    <div class="movie-list">
+        <div class="movie-list-item">
+            <img class="movie-list-item-img" src="${movie.Poster}" alt=""/>
+            <span class="movie-list-item-title">${movie.title}</span>
+            <p class="movie-list-item-desc">${movie.genre}</p>
+            <p class="movie-list-item-desc">${movie.id}</p>
+            <button class="movie-list-itmem-button"></button>
+            </div>
+        </div>
+    </div>
+</div>`
+        )}
+    console.log(data);
 
-//Making post to data bases (POST PUT DELETE REQUEST) //
-// OMDB API //
+});
 
-// use a get request from OMBD. then display the info //
+// Search button is clicked, then data is extracted from the searchbox, sends the data through fetch to the API. Once the API receieves the data it returns in an object and THEN "CreateCard" function is called to populate the cards. //
+   $("#search-button").click((e) => {
+        e.preventDefault();
+        let userInput = $("#searchBox").val()
+        console.log(userInput)
+        fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=d431370d&t=${userInput}
+`).then((data) => {
+            return data.json();
+        }).then((data) => {
+            console.log(data);
+            createCard(data, 'newMovies');
+        })
 
-// to edit the info, stpre in object, then put in the glitch database //
+    })
 
-// if user wanted to add movie, we would have to store the added value into an object and post to database //
+// Adding Movies to Glitch DataBase //
+$("#addButton").on("click", function (e) {
+    e.preventDefault();
+    const submitObj = {
+        title: $("#addTitle").val(),
+        director: $("#addDirector").val(),
+        rating: $("#addRating").val(),
+        genre: $("#addGenre").val(),
+    };
+    const url = 'https://highfalutin-defiant-hickory.glitch.me/movies';
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submitObj),
+    };
+    fetch(url, options).then(() => fetch('https://highfalutin-defiant-hickory.glitch.me/movies')).then((data) => {
+        return data.json();
+    }).then((objectData) => {
+        console.log(objectData).then();
+    }).catch((error) => {
+        console.log(error);
+    })
+})
 
 
-/* USer should search for movies and display movies
-* allow user to add edit and delete
-*
-* to add a disabled attribute to the button, which means if theyre adding a movie, we need to disabled search while were adding, so we can add to db first, then when we enabled the search so it can look for it and find it. */
+//Delete movies from glitch database Functionality //
 
+$(".deleteButton").click(function (e) {
+    console.log($("#movieDelete").val());
+    e.preventDefault();
+    const url = '//highfalutin-defiant-hickory.glitch.me/movies/' + $("#movieDelete").val();
+
+    const options = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    };
+    fetch(url, options).then(() => fetch('https://highfalutin-defiant-hickory.glitch.me/movies')).then((data) => {
+        return data.json();
+    }).then((objectData) => {
+        console.log(objectData);
+    }).catch((error) => {
+        console.log(error);
+    });
+});
+
+
+// Function created to populate cards on webpage. //
+function createCard(data, containerName) {
+$('.' + containerName).append(
+
+        `<div class="movie-list-wrapper">
+    <div class="movie-list">
+        <div class="movie-list-item">
+            <img class="movie-list-item-img" src="${data.Poster}" alt=""/>
+            <span class="movie-list-item-title">${data.Title}</span>
+            <p class="movie-list-item-desc">${data.Plot}</p>
+            <button class="movie-list-itmem-button"></button>
+        </div>
+    </div>
+</div>
+</div>`
+)}
+
+
+
+console.log("linked")
+
+
+// Get fetch request from glitch to populate. //
+// Use code from coffee project to filter out movies //
